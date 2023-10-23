@@ -4,3 +4,6 @@
 [submodule "lib/periphery-next"]
 	path = lib/periphery-next
 	url = https://github.com/Uniswap/periphery-next
+[submodule "lib/solady"]
+	path = lib/solady
+	url = https://github.com/vectorized/solady
