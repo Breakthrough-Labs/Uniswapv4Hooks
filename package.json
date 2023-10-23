@@ -1,0 +1,10 @@
+{
+    "scripts": {
+        "ExampleHookTestsAll": "cd lib && cd periphery-next && forge test -vv",
+        "FullRangeTest": "cd lib && cd periphery-next && forge test -vv --match-path ./test/FullRange.t.sol",
+        "LimitOrderTest": "cd lib && cd periphery-next && forge test -vv --match-path ./test/LimitOrder.t.sol",
+        "TWAMMTest": "cd lib && cd periphery-next && forge test -vv --match-path ./test/TWAMM.t.sol",
+        "GeomeanOracleTest": "cd lib && cd periphery-next && forge test -vv --match-path ./test/GeomeanOracle.t.sol",
+        "OracleTest": "cd lib && cd periphery-next && forge test -vv --match-path ./test/Oracle.t.sol"
+    }
+}
