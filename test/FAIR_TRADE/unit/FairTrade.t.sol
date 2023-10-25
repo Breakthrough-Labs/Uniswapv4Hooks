@@ -11,10 +11,10 @@ import {CurrencyLibrary, Currency} from "@uniswap/v4-core/contracts/types/Curren
 import {PoolKey} from "@uniswap/v4-core/contracts/types/PoolKey.sol";
 import {PoolId, PoolIdLibrary} from "@uniswap/v4-core/contracts/types/PoolId.sol";
 import {Deployers} from "@uniswap/v4-core/test/foundry-tests/utils/Deployers.sol";
-import {SimpleHookTest} from "./utils/SimpleHookTest.sol";
-import {FairTrade} from "../../../src/FAIR_TRADE/src/FairTrade.sol";
-import {HookMiner} from "./utils/HookMiner.sol";
-import {FairTradeImplementation} from "../../../src/FAIR_TRADE/src/implementation/FairTradeImplementation.sol";
+import {SimpleHookTest} from "../utils/SimpleHookTest.sol";
+import {FairTrade} from "../../../src/FAIR_TRADE/FairTrade.sol";
+import {HookMiner} from "../utils/HookMiner.sol";
+import {FairTradeImplementation} from "../../../src/FAIR_TRADE/implementation/FairTradeImplementation.sol";
 
 contract FairTradeTest is SimpleHookTest, Deployers {
     using PoolIdLibrary for PoolKey;

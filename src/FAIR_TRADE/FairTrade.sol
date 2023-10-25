@@ -12,11 +12,11 @@ import {BalanceDelta} from "@uniswap/v4-core/contracts/types/BalanceDelta.sol";
 import {CurrencyLibrary, Currency} from "@uniswap/v4-core/contracts/types/Currency.sol";
 import {TickMath} from "@uniswap/v4-core/contracts/libraries/TickMath.sol";
 
-import {Ownable} from "solady/auth/Ownable.sol";
+import {Ownable} from "@solady/auth/Ownable.sol";
 import {FairTradeERC20} from "./FairTradeERC20.sol";
 
 // Will be official V4 later:
-import {PoolModifyPositionTest} from "@uniswap/v4-core/contracts/test/PoolModifyPositionTest.sol";
+import {PoolModifyPositionTest} from "../../test/FAIR_TRADE/utils/PoolModifyPositionTest.sol";
 import {PoolSwapTest} from "@uniswap/v4-core/contracts/test/PoolSwapTest.sol";
 
 // Need to get information re. token
@@ -50,6 +50,12 @@ contract FairTrade is BaseHook, Ownable {
     address public tokenAddress = address(0);
     mapping(address => bool) public isFunder;
     address[] fundingAddresses = new address[](0);
+
+    struct CallbackData {
+        address sender;
+        PoolKey key;
+        IPoolManager.ModifyPositionParams params;
+    }
 
     constructor(
         IPoolManager _poolManager,

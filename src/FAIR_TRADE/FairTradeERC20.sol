@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 pragma solidity ^0.8.19;
 
-import {ERC20} from "solady/tokens/ERC20.sol";
-import {Ownable} from "solady/auth/Ownable.sol";
+import {ERC20} from "../../lib/solady/src/tokens/ERC20.sol";
+import {Ownable} from "../../lib/solady/src/auth/Ownable.sol";
 
 contract FairTradeERC20 is ERC20, Ownable {
     string internal _name;
