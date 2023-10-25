@@ -2,7 +2,6 @@
 pragma solidity ^0.8.19;
 
 import {Test, console2} from "forge-std/Test.sol";
-// import {GasSnapshot} from "forge-gas-snapshot/GasSnapshot.sol";
 import {IHooks} from "@uniswap/v4-core/contracts/interfaces/IHooks.sol";
 import {Hooks} from "@uniswap/v4-core/contracts/libraries/Hooks.sol";
 import {TickMath} from "@uniswap/v4-core/contracts/libraries/TickMath.sol";
@@ -14,7 +13,7 @@ import {Deployers} from "@uniswap/v4-core/test/foundry-tests/utils/Deployers.sol
 import {SimpleHookTest} from "../utils/SimpleHookTest.sol";
 import {FairTrade} from "../../../src/FAIR_TRADE/FairTrade.sol";
 import {HookMiner} from "../utils/HookMiner.sol";
-import {FairTradeImplementation} from "../../../src/FAIR_TRADE/implementation/FairTradeImplementation.sol";
+import {FairTradeImplementation} from "../../../src/FAIR_TRADE/utils/FairTradeImplementation.sol";
 
 contract FairTradeTest is SimpleHookTest, Deployers {
     using PoolIdLibrary for PoolKey;

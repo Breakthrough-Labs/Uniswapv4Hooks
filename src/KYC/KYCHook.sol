@@ -2,13 +2,10 @@
 pragma solidity >=0.8.19;
 
 import {Ownable} from "@solady/auth/Ownable.sol";
-import {ERC721} from "@solady/tokens/ERC721.sol";
 import {IPoolManager} from "@uniswap/v4-core/contracts/interfaces/IPoolManager.sol";
 import {Hooks} from "@uniswap/v4-core/contracts/libraries/Hooks.sol";
 import {BaseHook} from "periphery-next/BaseHook.sol";
 import {PoolKey} from "@uniswap/v4-core/contracts/types/PoolKey.sol";
-
-// import {PoolKey} from "@uniswap/v4-core/contracts/types/PoolKey.sol}";
 
 /**
  * @title An interface for checking whether an address has a valid kycNFT token
@@ -28,7 +25,6 @@ contract KYCSwaps is BaseHook, Ownable {
     IKycValidity public kycValidity;
     address private _preKycValidity;
     uint256 private _setKycValidityReqTimestamp;
-    uint256 public numSwaps;
 
     constructor(
         IPoolManager _poolManager,
@@ -62,7 +58,7 @@ contract KYCSwaps is BaseHook, Ownable {
     function getHooksCalls() public pure override returns (Hooks.Calls memory) {
         return
             Hooks.Calls({
-                beforeInitialize: false,
+                beforeInitialize: true,
                 afterInitialize: false,
                 beforeModifyPosition: true,
                 afterModifyPosition: false,
@@ -73,10 +69,20 @@ contract KYCSwaps is BaseHook, Ownable {
             });
     }
 
+    function beforeInitialize(
+        address,
+        PoolKey calldata,
+        uint160,
+        bytes calldata
+    ) external view override poolManagerOnly onlyPermitKYC returns (bytes4) {
+        return BaseHook.beforeInitialize.selector;
+    }
+
     function beforeModifyPosition(
         address,
         PoolKey calldata,
-        IPoolManager.ModifyPositionParams calldata
+        uint160,
+        bytes calldata
     ) external view poolManagerOnly onlyPermitKYC returns (bytes4) {
         return BaseHook.beforeModifyPosition.selector;
     }

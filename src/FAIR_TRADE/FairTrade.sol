@@ -13,7 +13,7 @@ import {CurrencyLibrary, Currency} from "@uniswap/v4-core/contracts/types/Curren
 import {TickMath} from "@uniswap/v4-core/contracts/libraries/TickMath.sol";
 
 import {Ownable} from "@solady/auth/Ownable.sol";
-import {FairTradeERC20} from "./FairTradeERC20.sol";
+import {FairTradeERC20} from "./utils/FairTradeERC20.sol";
 
 // Will be official V4 later:
 import {PoolModifyPositionTest} from "../../test/FAIR_TRADE/utils/PoolModifyPositionTest.sol";

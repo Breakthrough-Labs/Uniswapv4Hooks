@@ -18,6 +18,5 @@ contract FairTradeImplementation is FairTrade {
         Hooks.validateHookAddress(addressToEtch, getHooksCalls());
     }
 
-    // make this a no-op in testing
     function validateHookAddress(BaseHook _this) internal pure override {}
 }
