@@ -8,5 +8,11 @@
         "OracleTest": "cd lib && cd periphery-next && forge test -vv --match-path ./test/Oracle.t.sol",
         "HedgeTest": "forge test -vvvv --match-path ./test/HEDGE/Hedge.t.sol --ffi",
         "MultiSigTest": "forge test -vvvv --match-path ./test/MULTI_SIG/MultiSigTest.t.sol --ffi"
+    },
+    "dependencies": {
+        "hardhat": "^2.18.3",
+        "hardhat-gas-reporter": "^1.0.9",
+        "hardhat-preprocessor": "^0.1.5",
+        "solidity-coverage": "^0.8.5"
     }
 }
