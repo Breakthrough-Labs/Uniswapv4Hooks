@@ -4,7 +4,7 @@ pragma solidity ^0.8.15;
 import {Ownable} from "@solady/auth/Ownable.sol";
 import {IPoolManager} from "@uniswap/v4-core/contracts/interfaces/IPoolManager.sol";
 import {Hooks} from "@uniswap/v4-core/contracts/libraries/Hooks.sol";
-import {BaseHook} from "periphery-next/BaseHook.sol";
+import {BaseHook} from "v4-periphery/BaseHook.sol";
 import {PoolKey} from "@uniswap/v4-core/contracts/types/PoolKey.sol";
 
 /**

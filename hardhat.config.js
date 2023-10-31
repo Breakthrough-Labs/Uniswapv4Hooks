@@ -1,6 +1,7 @@
 require("hardhat-preprocessor");
 require("hardhat-gas-reporter");
 require("solidity-coverage");
+
 const fs = require("fs");
 
 function getRemappings() {
@@ -13,6 +14,7 @@ function getRemappings() {
 
 // You need to export an object to set up your config
 // Go to https://hardhat.org/config/ to learn more
+const sourceDirectories = ["./src", "./test", "./script"];
 
 const config = {
   solidity: "0.8.21",

@@ -1,0 +1,2939 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/src/FAIR_TRADE/FairTrade.sol": {
+      "lastModificationDate": 1698423142292,
+      "contentHash": "012afdb85262b3d64edd9a8449320411",
+      "sourceName": "src/FAIR_TRADE/FairTrade.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [
+        "lib/periphery-next/contracts/BaseHook.sol",
+        "lib/periphery-next/lib/v4-core/contracts/libraries/Hooks.sol",
+        "lib/periphery-next/lib/v4-core/contracts/interfaces/IHooks.sol",
+        "lib/periphery-next/lib/v4-core/contracts/interfaces/IPoolManager.sol",
+        "lib/periphery-next/lib/v4-core/contracts/types/PoolKey.sol",
+        "lib/periphery-next/lib/v4-core/contracts/types/PoolId.sol",
+        "lib/periphery-next/lib/v4-core/contracts/types/BalanceDelta.sol",
+        "lib/periphery-next/lib/v4-core/contracts/types/Currency.sol",
+        "lib/periphery-next/lib/v4-core/contracts/libraries/TickMath.sol",
+        "lib/solady/src/auth/Ownable.sol",
+        "./utils/FairTradeERC20.sol",
+        "../../test/FAIR_TRADE/utils/PoolModifyPositionTest.sol",
+        "lib/periphery-next/lib/v4-core/contracts/test/PoolSwapTest.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.19"
+      ],
+      "artifacts": [
+        "FairTrade"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/src/FAIR_TRADE/utils/FairTradeERC20.sol": {
+      "lastModificationDate": 1698197070145,
+      "contentHash": "c703860a37b44c873b424bb0e3f801fd",
+      "sourceName": "src/FAIR_TRADE/utils/FairTradeERC20.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../../lib/solady/src/tokens/ERC20.sol",
+        "../../../lib/solady/src/auth/Ownable.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.19"
+      ],
+      "artifacts": [
+        "FairTradeERC20"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/test/FAIR_TRADE/utils/PoolModifyPositionTest.sol": {
+      "lastModificationDate": 1698176035389,
+      "contentHash": "8cb57bdc315495dbb399e165d66379e9",
+      "sourceName": "test/FAIR_TRADE/utils/PoolModifyPositionTest.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [
+        "lib/periphery-next/lib/v4-core/contracts/types/Currency.sol",
+        "lib/periphery-next/lib/v4-core/contracts/interfaces/external/IERC20Minimal.sol",
+        "lib/periphery-next/lib/v4-core/contracts/interfaces/callback/ILockCallback.sol",
+        "lib/periphery-next/lib/v4-core/contracts/interfaces/IPoolManager.sol",
+        "lib/periphery-next/lib/v4-core/contracts/types/BalanceDelta.sol",
+        "lib/periphery-next/lib/v4-core/contracts/types/PoolKey.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "PoolModifyPositionTest"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/periphery-next/contracts/BaseHook.sol": {
+      "lastModificationDate": 1698092171211,
+      "contentHash": "cc363ffd457505da5de7700f55b9e7b3",
+      "sourceName": "lib/periphery-next/contracts/BaseHook.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [
+        "lib/periphery-next/lib/v4-core/contracts/libraries/Hooks.sol",
+        "lib/periphery-next/lib/v4-core/contracts/interfaces/IPoolManager.sol",
+        "lib/periphery-next/lib/v4-core/contracts/interfaces/IHooks.sol",
+        "lib/periphery-next/lib/v4-core/contracts/types/BalanceDelta.sol",
+        "lib/periphery-next/lib/v4-core/contracts/types/PoolKey.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.19"
+      ],
+      "artifacts": [
+        "BaseHook"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/solady/src/auth/Ownable.sol": {
+      "lastModificationDate": 1698105213298,
+      "contentHash": "c4dc3df5e9b88f1d361e92da30715f29",
+      "sourceName": "lib/solady/src/auth/Ownable.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.4"
+      ],
+      "artifacts": [
+        "Ownable"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/periphery-next/lib/v4-core/contracts/interfaces/IPoolManager.sol": {
+      "lastModificationDate": 1698092197408,
+      "contentHash": "33bb0797483c0b99b5ed18c4e0e99020",
+      "sourceName": "lib/periphery-next/lib/v4-core/contracts/interfaces/IPoolManager.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [
+        "../types/Currency.sol",
+        "../types/PoolKey.sol",
+        "../libraries/Pool.sol",
+        "lib/periphery-next/lib/openzeppelin-contracts/contracts/token/ERC1155/IERC1155.sol",
+        "./IHooks.sol",
+        "./IFees.sol",
+        "../types/BalanceDelta.sol",
+        "../types/PoolId.sol",
+        "../libraries/Position.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IPoolManager"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/periphery-next/lib/v4-core/contracts/interfaces/IHooks.sol": {
+      "lastModificationDate": 1698092197408,
+      "contentHash": "d8db0e186889bad622c3546b0ac8d656",
+      "sourceName": "lib/periphery-next/lib/v4-core/contracts/interfaces/IHooks.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [
+        "../types/PoolKey.sol",
+        "../types/BalanceDelta.sol",
+        "./IPoolManager.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IHooks"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/periphery-next/lib/v4-core/contracts/libraries/Hooks.sol": {
+      "lastModificationDate": 1698092197410,
+      "contentHash": "dc3b2210909a0ab3abb6b38ea3a671b5",
+      "sourceName": "lib/periphery-next/lib/v4-core/contracts/libraries/Hooks.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/IHooks.sol",
+        "../libraries/FeeLibrary.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Hooks"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/periphery-next/lib/v4-core/contracts/types/PoolKey.sol": {
+      "lastModificationDate": 1698092197416,
+      "contentHash": "afb69a9ea979a53f0c2b85a3d86adf81",
+      "sourceName": "lib/periphery-next/lib/v4-core/contracts/types/PoolKey.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Currency.sol",
+        "../interfaces/IHooks.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.19"
+      ],
+      "artifacts": []
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/periphery-next/lib/v4-core/contracts/types/BalanceDelta.sol": {
+      "lastModificationDate": 1698092197415,
+      "contentHash": "a9a7b131b187c96ba149b6c874288a6c",
+      "sourceName": "lib/periphery-next/lib/v4-core/contracts/types/BalanceDelta.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "BalanceDeltaLibrary"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/periphery-next/lib/v4-core/contracts/types/Currency.sol": {
+      "lastModificationDate": 1698092197415,
+      "contentHash": "f113b3502d3329534a72adedf7d6755e",
+      "sourceName": "lib/periphery-next/lib/v4-core/contracts/types/Currency.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/external/IERC20Minimal.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "CurrencyLibrary"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/periphery-next/lib/v4-core/contracts/types/PoolId.sol": {
+      "lastModificationDate": 1698092197416,
+      "contentHash": "3f5290aa4638a3e7a85e5bf6ff049590",
+      "sourceName": "lib/periphery-next/lib/v4-core/contracts/types/PoolId.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [
+        "./PoolKey.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "PoolIdLibrary"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/periphery-next/lib/v4-core/contracts/libraries/TickMath.sol": {
+      "lastModificationDate": 1698092197412,
+      "contentHash": "a5764c6a1787b73b1bde7b9884e45822",
+      "sourceName": "lib/periphery-next/lib/v4-core/contracts/libraries/TickMath.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "TickMath"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/periphery-next/lib/v4-core/contracts/test/PoolSwapTest.sol": {
+      "lastModificationDate": 1698092197413,
+      "contentHash": "8d7d034473b61b69c12594357e1288ee",
+      "sourceName": "lib/periphery-next/lib/v4-core/contracts/test/PoolSwapTest.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [
+        "../types/Currency.sol",
+        "../interfaces/external/IERC20Minimal.sol",
+        "../interfaces/callback/ILockCallback.sol",
+        "../interfaces/IPoolManager.sol",
+        "../types/BalanceDelta.sol",
+        "../types/PoolKey.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "PoolSwapTest"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/solady/src/tokens/ERC20.sol": {
+      "lastModificationDate": 1698105213300,
+      "contentHash": "6b39f7c149a328e2908199c5a6125d53",
+      "sourceName": "lib/solady/src/tokens/ERC20.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.4"
+      ],
+      "artifacts": [
+        "ERC20"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/periphery-next/lib/v4-core/contracts/interfaces/callback/ILockCallback.sol": {
+      "lastModificationDate": 1698092197409,
+      "contentHash": "41511fa9ba1f92ce1d7563854a787880",
+      "sourceName": "lib/periphery-next/lib/v4-core/contracts/interfaces/callback/ILockCallback.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "ILockCallback"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/periphery-next/lib/v4-core/contracts/interfaces/external/IERC20Minimal.sol": {
+      "lastModificationDate": 1698092197409,
+      "contentHash": "b1e20b81f1588bdc1857a7fc2bf2bedb",
+      "sourceName": "lib/periphery-next/lib/v4-core/contracts/interfaces/external/IERC20Minimal.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IERC20Minimal"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/periphery-next/lib/v4-core/contracts/libraries/Pool.sol": {
+      "lastModificationDate": 1698092197411,
+      "contentHash": "e92d369e395ba6bceb998e65f5af099b",
+      "sourceName": "lib/periphery-next/lib/v4-core/contracts/libraries/Pool.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [
+        "./SafeCast.sol",
+        "./TickBitmap.sol",
+        "./Position.sol",
+        "./FullMath.sol",
+        "./FixedPoint128.sol",
+        "./TickMath.sol",
+        "./SqrtPriceMath.sol",
+        "./SwapMath.sol",
+        "../types/BalanceDelta.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Pool"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/periphery-next/lib/v4-core/contracts/libraries/Position.sol": {
+      "lastModificationDate": 1698092197411,
+      "contentHash": "7ae41724bd36722a8e33625c969578d9",
+      "sourceName": "lib/periphery-next/lib/v4-core/contracts/libraries/Position.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [
+        "./FullMath.sol",
+        "./FixedPoint128.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Position"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/periphery-next/lib/v4-core/contracts/interfaces/IFees.sol": {
+      "lastModificationDate": 1698092197408,
+      "contentHash": "2d353713cd976abfe804f51d7af2b4f6",
+      "sourceName": "lib/periphery-next/lib/v4-core/contracts/interfaces/IFees.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [
+        "../types/Currency.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.19"
+      ],
+      "artifacts": [
+        "IFees"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/periphery-next/lib/openzeppelin-contracts/contracts/token/ERC1155/IERC1155.sol": {
+      "lastModificationDate": 1698092194379,
+      "contentHash": "6ab9f00c6c5253d1501e8c50e8fdd57a",
+      "sourceName": "lib/periphery-next/lib/openzeppelin-contracts/contracts/token/ERC1155/IERC1155.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../utils/introspection/IERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IERC1155"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/periphery-next/lib/v4-core/contracts/libraries/FullMath.sol": {
+      "lastModificationDate": 1698092197410,
+      "contentHash": "0d30542759085b67c00d7597cd7ca307",
+      "sourceName": "lib/periphery-next/lib/v4-core/contracts/libraries/FullMath.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "FullMath"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/periphery-next/lib/v4-core/contracts/libraries/TickBitmap.sol": {
+      "lastModificationDate": 1698092197411,
+      "contentHash": "6cd2e3876c5c43f9fd933bfaf5c7c233",
+      "sourceName": "lib/periphery-next/lib/v4-core/contracts/libraries/TickBitmap.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [
+        "./BitMath.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "TickBitmap"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/periphery-next/lib/v4-core/contracts/libraries/FixedPoint128.sol": {
+      "lastModificationDate": 1698092197410,
+      "contentHash": "81cee77f7d7c816ced348989df7371e9",
+      "sourceName": "lib/periphery-next/lib/v4-core/contracts/libraries/FixedPoint128.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "FixedPoint128"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/periphery-next/lib/v4-core/contracts/libraries/SafeCast.sol": {
+      "lastModificationDate": 1698092197411,
+      "contentHash": "2c56bd3bb46889b72036eb7cf2f7c9d1",
+      "sourceName": "lib/periphery-next/lib/v4-core/contracts/libraries/SafeCast.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "SafeCast"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/periphery-next/lib/v4-core/contracts/libraries/SqrtPriceMath.sol": {
+      "lastModificationDate": 1698092197411,
+      "contentHash": "ea5ac26ec4942f280cfa1de2fc368c14",
+      "sourceName": "lib/periphery-next/lib/v4-core/contracts/libraries/SqrtPriceMath.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [
+        "./SafeCast.sol",
+        "./FullMath.sol",
+        "./UnsafeMath.sol",
+        "./FixedPoint96.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "SqrtPriceMath"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/periphery-next/lib/v4-core/contracts/libraries/SwapMath.sol": {
+      "lastModificationDate": 1698092197411,
+      "contentHash": "0c1cae3adbdc65101517bad68a9d923f",
+      "sourceName": "lib/periphery-next/lib/v4-core/contracts/libraries/SwapMath.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [
+        "./FullMath.sol",
+        "./SqrtPriceMath.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "SwapMath"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/periphery-next/lib/v4-core/contracts/libraries/BitMath.sol": {
+      "lastModificationDate": 1698092197409,
+      "contentHash": "e09992e68cbfee6676578b28a8eb6985",
+      "sourceName": "lib/periphery-next/lib/v4-core/contracts/libraries/BitMath.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "BitMath"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/periphery-next/lib/v4-core/contracts/libraries/UnsafeMath.sol": {
+      "lastModificationDate": 1698092197412,
+      "contentHash": "2fd744d4d8034e828e43d4e7cd79485d",
+      "sourceName": "lib/periphery-next/lib/v4-core/contracts/libraries/UnsafeMath.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "UnsafeMath"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/periphery-next/lib/v4-core/contracts/libraries/FixedPoint96.sol": {
+      "lastModificationDate": 1698092197410,
+      "contentHash": "1776e4be5f4f059e34830b5573a4f615",
+      "sourceName": "lib/periphery-next/lib/v4-core/contracts/libraries/FixedPoint96.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "FixedPoint96"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/periphery-next/lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol": {
+      "lastModificationDate": 1698092194387,
+      "contentHash": "5a21a24ec719b683e7faf6eae0db9181",
+      "sourceName": "lib/periphery-next/lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IERC165"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/periphery-next/lib/v4-core/contracts/libraries/FeeLibrary.sol": {
+      "lastModificationDate": 1698092197409,
+      "contentHash": "047d67700705a49578fd0d3fe21cb8ca",
+      "sourceName": "lib/periphery-next/lib/v4-core/contracts/libraries/FeeLibrary.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "FeeLibrary"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/src/FAIR_TRADE/utils/FairTradeImplementation.sol": {
+      "lastModificationDate": 1698423227894,
+      "contentHash": "9dd3e5f45a241823ad1cccea30c203c3",
+      "sourceName": "src/FAIR_TRADE/utils/FairTradeImplementation.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [
+        "../FairTrade.sol",
+        "lib/periphery-next/contracts/BaseHook.sol",
+        "lib/periphery-next/lib/v4-core/contracts/interfaces/IPoolManager.sol",
+        "lib/periphery-next/lib/v4-core/contracts/libraries/Hooks.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.19"
+      ],
+      "artifacts": [
+        "FairTradeImplementation"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/src/MULTI_SIG/MultiSigSwapHook.sol": {
+      "lastModificationDate": 1698249604615,
+      "contentHash": "e03c9c07302d4513011c4549562b7ea7",
+      "sourceName": "src/MULTI_SIG/MultiSigSwapHook.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [
+        "lib/periphery-next/contracts/BaseHook.sol",
+        "lib/periphery-next/lib/v4-core/contracts/libraries/Hooks.sol",
+        "lib/periphery-next/lib/v4-core/contracts/interfaces/IPoolManager.sol",
+        "lib/periphery-next/lib/v4-core/contracts/types/PoolId.sol",
+        "lib/periphery-next/lib/v4-core/contracts/types/PoolKey.sol",
+        "lib/periphery-next/lib/v4-core/contracts/types/BalanceDelta.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.15"
+      ],
+      "artifacts": [
+        "MultiSigSwapHook"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/src/KYC/KYCHook.sol": {
+      "lastModificationDate": 1698423268983,
+      "contentHash": "c91e17971b5c74cfca91276eda2946c5",
+      "sourceName": "src/KYC/KYCHook.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [
+        "lib/solady/src/auth/Ownable.sol",
+        "lib/periphery-next/lib/v4-core/contracts/interfaces/IPoolManager.sol",
+        "lib/periphery-next/lib/v4-core/contracts/libraries/Hooks.sol",
+        "lib/periphery-next/contracts/BaseHook.sol",
+        "lib/periphery-next/lib/v4-core/contracts/types/PoolKey.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.15"
+      ],
+      "artifacts": [
+        "IKycValidity",
+        "KYCSwaps"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/src/HEDGE/Hedge.sol": {
+      "lastModificationDate": 1698200126733,
+      "contentHash": "3cebcdf9f9ff31fccdc8218cc5da4007",
+      "sourceName": "src/HEDGE/Hedge.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [
+        "lib/forge-std/src/Test.sol",
+        "lib/periphery-next/lib/v4-core/contracts/libraries/Hooks.sol",
+        "lib/periphery-next/lib/v4-core/contracts/interfaces/IPoolManager.sol",
+        "lib/periphery-next/lib/v4-core/contracts/types/PoolId.sol",
+        "lib/periphery-next/contracts/BaseHook.sol",
+        "lib/periphery-next/lib/v4-core/contracts/types/PoolKey.sol",
+        "lib/periphery-next/lib/v4-core/contracts/types/Currency.sol",
+        "lib/periphery-next/lib/openzeppelin-contracts/contracts/interfaces/IERC20.sol",
+        "lib/periphery-next/lib/openzeppelin-contracts/contracts/token/ERC20/utils/SafeERC20.sol",
+        "lib/periphery-next/lib/v4-core/contracts/types/BalanceDelta.sol",
+        "lib/periphery-next/lib/v4-core/contracts/libraries/FullMath.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.15"
+      ],
+      "artifacts": [
+        "Hedge"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/forge-std/src/Test.sol": {
+      "lastModificationDate": 1698092083350,
+      "contentHash": "2aab2a69010682df7fbf07903b3b1938",
+      "sourceName": "lib/forge-std/src/Test.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [
+        "./console.sol",
+        "./console2.sol",
+        "./safeconsole.sol",
+        "./StdAssertions.sol",
+        "./StdChains.sol",
+        "./StdCheats.sol",
+        "./StdError.sol",
+        "./StdInvariant.sol",
+        "./StdJson.sol",
+        "./StdMath.sol",
+        "./StdStorage.sol",
+        "./StdStyle.sol",
+        "./StdUtils.sol",
+        "./Vm.sol",
+        "./Base.sol",
+        "lib/forge-std/lib/ds-test/src/test.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.2 <0.9.0"
+      ],
+      "artifacts": [
+        "Test"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/periphery-next/lib/openzeppelin-contracts/contracts/interfaces/IERC20.sol": {
+      "lastModificationDate": 1698092194356,
+      "contentHash": "2338cb57713154848b7d5bd38e808dd1",
+      "sourceName": "lib/periphery-next/lib/openzeppelin-contracts/contracts/interfaces/IERC20.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [
+        "../token/ERC20/IERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": []
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/periphery-next/lib/openzeppelin-contracts/contracts/token/ERC20/utils/SafeERC20.sol": {
+      "lastModificationDate": 1698092194382,
+      "contentHash": "bee93435aa4b073d50d28ae25c33087e",
+      "sourceName": "lib/periphery-next/lib/openzeppelin-contracts/contracts/token/ERC20/utils/SafeERC20.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [
+        "../IERC20.sol",
+        "../extensions/IERC20Permit.sol",
+        "../../../utils/Address.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "SafeERC20"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/forge-std/src/StdChains.sol": {
+      "lastModificationDate": 1698092083348,
+      "contentHash": "b0324b2e5a11948f852032aa293b3a05",
+      "sourceName": "lib/forge-std/src/StdChains.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Vm.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.2 <0.9.0"
+      ],
+      "artifacts": [
+        "StdChains"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/forge-std/src/console.sol": {
+      "lastModificationDate": 1698092083351,
+      "contentHash": "100b8a33b917da1147740d7ab8b0ded3",
+      "sourceName": "lib/forge-std/src/console.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.4.22 <0.9.0"
+      ],
+      "artifacts": [
+        "console"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/forge-std/src/console2.sol": {
+      "lastModificationDate": 1698092083351,
+      "contentHash": "491ca717c1915995e78cc361485a3067",
+      "sourceName": "lib/forge-std/src/console2.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.4.22 <0.9.0"
+      ],
+      "artifacts": [
+        "console2"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/forge-std/src/StdAssertions.sol": {
+      "lastModificationDate": 1698092083348,
+      "contentHash": "794003d031009f9ef3cc9867fce0b1e7",
+      "sourceName": "lib/forge-std/src/StdAssertions.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [
+        "lib/forge-std/lib/ds-test/src/test.sol",
+        "./StdMath.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.2 <0.9.0"
+      ],
+      "artifacts": [
+        "StdAssertions"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/forge-std/src/safeconsole.sol": {
+      "lastModificationDate": 1698092083353,
+      "contentHash": "ac3b1bf5a444db5db3656021830258a8",
+      "sourceName": "lib/forge-std/src/safeconsole.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.2 <0.9.0"
+      ],
+      "artifacts": [
+        "safeconsole"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/forge-std/src/StdCheats.sol": {
+      "lastModificationDate": 1698092083348,
+      "contentHash": "d984e2c76dae07bac1e292af2a5d4fd1",
+      "sourceName": "lib/forge-std/src/StdCheats.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [
+        "./StdStorage.sol",
+        "./console2.sol",
+        "./Vm.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.2 <0.9.0"
+      ],
+      "artifacts": [
+        "StdCheats",
+        "StdCheatsSafe"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/forge-std/src/StdError.sol": {
+      "lastModificationDate": 1698092083349,
+      "contentHash": "64c896e1276a291776e5ea5aecb3870a",
+      "sourceName": "lib/forge-std/src/StdError.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.2 <0.9.0"
+      ],
+      "artifacts": [
+        "stdError"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/forge-std/src/StdInvariant.sol": {
+      "lastModificationDate": 1698092083349,
+      "contentHash": "0a580d6fac69e9d4b6504f747f3c0c24",
+      "sourceName": "lib/forge-std/src/StdInvariant.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.2 <0.9.0"
+      ],
+      "artifacts": [
+        "StdInvariant"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/forge-std/src/StdMath.sol": {
+      "lastModificationDate": 1698092083349,
+      "contentHash": "9da8f453eba6bb98f3d75bc6822bfb29",
+      "sourceName": "lib/forge-std/src/StdMath.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.2 <0.9.0"
+      ],
+      "artifacts": [
+        "stdMath"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/forge-std/src/StdJson.sol": {
+      "lastModificationDate": 1698092083349,
+      "contentHash": "a341308627b7eeab7589534daad58186",
+      "sourceName": "lib/forge-std/src/StdJson.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Vm.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.0 <0.9.0"
+      ],
+      "artifacts": [
+        "stdJson"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/forge-std/src/StdStorage.sol": {
+      "lastModificationDate": 1698092083349,
+      "contentHash": "abd6f3379e6e2a7979b18abc21aea0c1",
+      "sourceName": "lib/forge-std/src/StdStorage.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Vm.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.2 <0.9.0"
+      ],
+      "artifacts": [
+        "stdStorage",
+        "stdStorageSafe"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/forge-std/src/StdStyle.sol": {
+      "lastModificationDate": 1698092083350,
+      "contentHash": "6281165a12aa639705c691fccefd855e",
+      "sourceName": "lib/forge-std/src/StdStyle.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Vm.sol"
+      ],
+      "versionPragmas": [
+        ">=0.4.22 <0.9.0"
+      ],
+      "artifacts": [
+        "StdStyle"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/forge-std/src/StdUtils.sol": {
+      "lastModificationDate": 1698092083350,
+      "contentHash": "3ce83748fd76644688f916c9cced545b",
+      "sourceName": "lib/forge-std/src/StdUtils.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [
+        "./interfaces/IMulticall3.sol",
+        "./Vm.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.2 <0.9.0"
+      ],
+      "artifacts": [
+        "StdUtils"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/forge-std/src/Base.sol": {
+      "lastModificationDate": 1698092083348,
+      "contentHash": "ee13c050b1914464f1d3f90cde90204b",
+      "sourceName": "lib/forge-std/src/Base.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [
+        "./StdStorage.sol",
+        "./Vm.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.2 <0.9.0"
+      ],
+      "artifacts": [
+        "CommonBase",
+        "ScriptBase",
+        "TestBase"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/forge-std/src/Vm.sol": {
+      "lastModificationDate": 1698092083350,
+      "contentHash": "eff2556a384c025f56150fb3f78de858",
+      "sourceName": "lib/forge-std/src/Vm.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.2 <0.9.0"
+      ],
+      "artifacts": [
+        "Vm",
+        "VmSafe"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/forge-std/lib/ds-test/src/test.sol": {
+      "lastModificationDate": 1698092084154,
+      "contentHash": "9febff9d09f18af5306669dc276c4c43",
+      "sourceName": "lib/forge-std/lib/ds-test/src/test.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "DSTest"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/forge-std/src/interfaces/IMulticall3.sol": {
+      "lastModificationDate": 1698092083353,
+      "contentHash": "7b131ca1ca32ef6378b7b9ad5488b901",
+      "sourceName": "lib/forge-std/src/interfaces/IMulticall3.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.2 <0.9.0"
+      ],
+      "artifacts": [
+        "IMulticall3"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/periphery-next/lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol": {
+      "lastModificationDate": 1698092194380,
+      "contentHash": "f9d429a75bcbb89457bbbcbe8af5544c",
+      "sourceName": "lib/periphery-next/lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IERC20"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/periphery-next/lib/openzeppelin-contracts/contracts/utils/Address.sol": {
+      "lastModificationDate": 1698092194385,
+      "contentHash": "b3f897b1c9f53ca34f38bbf247157e77",
+      "sourceName": "lib/periphery-next/lib/openzeppelin-contracts/contracts/utils/Address.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Address"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/periphery-next/lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Permit.sol": {
+      "lastModificationDate": 1698092194382,
+      "contentHash": "a1508ea94faab309475177d0a7533aee",
+      "sourceName": "lib/periphery-next/lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Permit.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IERC20Permit"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/src/KYC/utils/ERC721A.sol": {
+      "lastModificationDate": 1698193018917,
+      "contentHash": "6dc921a148d50730266f0af1d7b348ae",
+      "sourceName": "src/KYC/utils/ERC721A.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC721A.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.4"
+      ],
+      "artifacts": [
+        "ERC721A",
+        "ERC721A__IERC721Receiver"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/src/KYC/utils/IERC721A.sol": {
+      "lastModificationDate": 1698193022217,
+      "contentHash": "c31a05698ddc2f109ba8723105d854c6",
+      "sourceName": "src/KYC/utils/IERC721A.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.4"
+      ],
+      "artifacts": [
+        "IERC721A"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/src/VOTING_ESCROW/VotingEscrow.sol": {
+      "lastModificationDate": 1698686294369,
+      "contentHash": "ffae486211bd45d8bb15d20694bba917",
+      "sourceName": "src/VOTING_ESCROW/VotingEscrow.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [
+        "lib/periphery-next/contracts/BaseHook.sol",
+        "lib/periphery-next/lib/v4-core/contracts/libraries/Hooks.sol",
+        "lib/periphery-next/lib/v4-core/contracts/interfaces/IPoolManager.sol",
+        "lib/periphery-next/lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol",
+        "lib/periphery-next/lib/openzeppelin-contracts/contracts/security/ReentrancyGuard.sol",
+        "lib/periphery-next/lib/v4-core/contracts/types/PoolKey.sol",
+        "lib/periphery-next/lib/v4-core/contracts/types/PoolId.sol",
+        "lib/periphery-next/lib/v4-core/contracts/libraries/Position.sol",
+        "lib/periphery-next/lib/v4-core/contracts/types/BalanceDelta.sol",
+        "lib/periphery-next/lib/v4-core/contracts/libraries/FullMath.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.19"
+      ],
+      "artifacts": [
+        "VotingEscrow"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/periphery-next/lib/openzeppelin-contracts/contracts/security/ReentrancyGuard.sol": {
+      "lastModificationDate": 1698092194378,
+      "contentHash": "2bf41b78a56d5d2d9a0f4684234a7865",
+      "sourceName": "lib/periphery-next/lib/openzeppelin-contracts/contracts/security/ReentrancyGuard.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "ReentrancyGuard"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/periphery-next/lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol": {
+      "lastModificationDate": 1698092194380,
+      "contentHash": "d35cda26d098ea22c6022461ec967af5",
+      "sourceName": "lib/periphery-next/lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC20.sol",
+        "./extensions/IERC20Metadata.sol",
+        "../../utils/Context.sol",
+        "../../interfaces/draft-IERC6093.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "ERC20"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/periphery-next/lib/openzeppelin-contracts/contracts/interfaces/draft-IERC6093.sol": {
+      "lastModificationDate": 1698092194360,
+      "contentHash": "2d67be32f639a1f4f3fdb0a3f7f61602",
+      "sourceName": "lib/periphery-next/lib/openzeppelin-contracts/contracts/interfaces/draft-IERC6093.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IERC1155Errors",
+        "IERC20Errors",
+        "IERC721Errors"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/periphery-next/lib/openzeppelin-contracts/contracts/utils/Context.sol": {
+      "lastModificationDate": 1698092194385,
+      "contentHash": "09334082e90e487d918823170e4806b1",
+      "sourceName": "lib/periphery-next/lib/openzeppelin-contracts/contracts/utils/Context.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Context"
+      ]
+    },
+    "/Users/ae0h/METALWORKS/HOOK_BOOK/lib/periphery-next/lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol": {
+      "lastModificationDate": 1698092194381,
+      "contentHash": "56f1bd35ef71dceacdf28101e5f843aa",
+      "sourceName": "lib/periphery-next/lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+      "solcConfig": {
+        "version": "0.8.21",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "libraries": {
+            "": {
+              "__CACHE_BREAKER__": "0x0000000000000031363938373731343734383037"
+            }
+          }
+        }
+      },
+      "imports": [
+        "../IERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IERC20Metadata"
+      ]
+    }
+  }
+}
