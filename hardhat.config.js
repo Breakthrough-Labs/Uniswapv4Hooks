@@ -12,10 +12,6 @@ function getRemappings() {
     .map((line) => line.trim().split("="));
 }
 
-// You need to export an object to set up your config
-// Go to https://hardhat.org/config/ to learn more
-const sourceDirectories = ["./src", "./test", "./script"];
-
 const config = {
   solidity: "0.8.21",
   preprocess: {
@@ -35,7 +31,9 @@ const config = {
   },
   paths: {
     sources: "./src",
+    tests: "./test",
     cache: "./cache_hardhat",
   },
 };
+
 module.exports = config;
