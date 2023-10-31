@@ -4,3 +4,6 @@
 [submodule "lib/solady"]
 	path = lib/solady
 	url = https://github.com/vectorized/solady
+[submodule "lib/v4-periphery-nossh"]
+	path = lib/v4-periphery-nossh
+	url = https://github.com/Breakthrough-Labs/v4-periphery-nossh
