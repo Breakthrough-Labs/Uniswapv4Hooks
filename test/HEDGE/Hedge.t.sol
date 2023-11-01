@@ -3,8 +3,6 @@ pragma solidity ^0.8.15;
 
 import "forge-std/Test.sol";
 import "forge-std/console.sol";
-
-import {GasSnapshot} from "forge-gas-snapshot/GasSnapshot.sol";
 import {HookTest} from "./HookTest.sol";
 import {Hooks} from "@uniswap/v4-core/contracts/libraries/Hooks.sol";
 import {IHooks} from "@uniswap/v4-core/contracts/interfaces/IHooks.sol";
@@ -20,7 +18,7 @@ import {Currency} from "@uniswap/v4-core/contracts/types/Currency.sol";
 import {TestERC20} from "@uniswap/v4-core/contracts/test/TestERC20.sol";
 import {PoolSwapTest} from "@uniswap/v4-core/contracts/test/PoolSwapTest.sol";
 
-contract HedgeTest is HookTest, Deployers, GasSnapshot {
+contract HedgeTest is HookTest, Deployers{
     Hedge hedge = Hedge(address(uint160(Hooks.AFTER_SWAP_FLAG)));
 
     uint160 constant SQRT_RATIO_10_1 = 250541448375047931186413801569;
