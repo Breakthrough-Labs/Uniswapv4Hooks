@@ -1,0 +1,10 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "Deployers",
+  "sourceName": "lib/v4-periphery/lib/v4-core/test/foundry-tests/utils/Deployers.sol",
+  "abi": [],
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea264697066735822122005e38dbd3da9e67bdbcad5e901f7ca2de21b45cc3de01ad5cace8a21b1247be064736f6c63430008150033",
+  "deployedBytecode": "0x6080604052600080fdfea264697066735822122005e38dbd3da9e67bdbcad5e901f7ca2de21b45cc3de01ad5cace8a21b1247be064736f6c63430008150033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

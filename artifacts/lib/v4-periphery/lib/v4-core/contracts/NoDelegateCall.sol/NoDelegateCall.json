@@ -1,0 +1,16 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "NoDelegateCall",
+  "sourceName": "lib/v4-periphery/lib/v4-core/contracts/NoDelegateCall.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "DelegateCallNotAllowed",
+      "type": "error"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}
