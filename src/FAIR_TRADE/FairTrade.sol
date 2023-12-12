@@ -1,23 +1,23 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 pragma solidity ^0.8.19;
 
-import {BaseHook} from "lib/v4-periphery/contracts/BaseHook.sol";
+import {BaseHook} from "v4-periphery/BaseHook.sol";
 
-import {Hooks} from "lib/v4-periphery/lib/v4-core/contracts/libraries/Hooks.sol";
-import {IHooks} from "lib/v4-periphery/lib/v4-core/contracts/interfaces/IHooks.sol";
-import {IPoolManager} from "lib/v4-periphery/lib/v4-core/contracts/interfaces/IPoolManager.sol";
-import {PoolKey} from "lib/v4-periphery/lib/v4-core/contracts/types/PoolKey.sol";
-import {PoolId, PoolIdLibrary} from "lib/v4-periphery/lib/v4-core/contracts/types/PoolId.sol";
-import {BalanceDelta} from "lib/v4-periphery/lib/v4-core/contracts/types/BalanceDelta.sol";
-import {CurrencyLibrary, Currency} from "lib/v4-periphery/lib/v4-core/contracts/types/Currency.sol";
-import {TickMath} from "lib/v4-periphery/lib/v4-core/contracts/libraries/TickMath.sol";
+import {Hooks} from "@uniswap/v4-core/contracts/libraries/Hooks.sol";
+import {IHooks} from "@uniswap/v4-core/contracts/interfaces/IHooks.sol";
+import {IPoolManager} from "@uniswap/v4-core/contracts/interfaces/IPoolManager.sol";
+import {PoolKey} from "@uniswap/v4-core/contracts/types/PoolKey.sol";
+import {PoolId, PoolIdLibrary} from "@uniswap/v4-core/contracts/types/PoolId.sol";
+import {BalanceDelta} from "@uniswap/v4-core/contracts/types/BalanceDelta.sol";
+import {CurrencyLibrary, Currency} from "@uniswap/v4-core/contracts/types/Currency.sol";
+import {TickMath} from "@uniswap/v4-core/contracts/libraries/TickMath.sol";
 
 import {Ownable} from "lib/solady/src/auth/Ownable.sol";
 import {FairTradeERC20} from "./utils/FairTradeERC20.sol";
 
 // Will be official V4 later:
 import {PoolModifyPositionTest} from "./utils/PoolModifyPositionTest.sol";
-import {PoolSwapTest} from "lib/v4-periphery/lib/v4-core/contracts/test/PoolSwapTest.sol";
+import {PoolSwapTest} from "@uniswap/v4-core/contracts/test/PoolSwapTest.sol";
 
 // Need to get information re. token
 

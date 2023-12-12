@@ -1,12 +1,12 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.20;
 
-import {CurrencyLibrary, Currency} from "lib/v4-periphery/lib/v4-core/contracts/types/Currency.sol";
-import {IERC20Minimal} from "lib/v4-periphery/lib/v4-core/contracts/interfaces/external/IERC20Minimal.sol";
-import {ILockCallback} from "lib/v4-periphery/lib/v4-core/contracts/interfaces/callback/ILockCallback.sol";
-import {IPoolManager} from "lib/v4-periphery/lib/v4-core/contracts/interfaces/IPoolManager.sol";
-import {BalanceDelta} from "lib/v4-periphery/lib/v4-core/contracts/types/BalanceDelta.sol";
-import {PoolKey} from "lib/v4-periphery/lib/v4-core/contracts/types/PoolKey.sol";
+import {CurrencyLibrary, Currency} from "@uniswap/v4-core/contracts/types/Currency.sol";
+import {IERC20Minimal} from "@uniswap/v4-core/contracts/interfaces/external/IERC20Minimal.sol";
+import {ILockCallback} from "@uniswap/v4-core/contracts/interfaces/callback/ILockCallback.sol";
+import {IPoolManager} from "@uniswap/v4-core/contracts/interfaces/IPoolManager.sol";
+import {BalanceDelta} from "@uniswap/v4-core/contracts/types/BalanceDelta.sol";
+import {PoolKey} from "@uniswap/v4-core/contracts/types/PoolKey.sol";
 
 contract PoolModifyPositionTest is ILockCallback {
     using CurrencyLibrary for Currency;

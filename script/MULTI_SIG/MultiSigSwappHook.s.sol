@@ -5,7 +5,7 @@ import "forge-std/Script.sol";
 import {MultiSigSwapHook} from "../../src/MULTI_SIG/MultiSigSwapHook.sol";
 import {PoolManager} from "@uniswap/v4-core/contracts/PoolManager.sol";
 import {Hooks} from "@uniswap/v4-core/contracts/libraries/Hooks.sol";
-import {MultiSigSwapHookImplementation} from "../../test/MULTI_SIG/utils/MultiSigSwapHookImplementation.sol";
+import {MultiSigSwapHookImplementation} from "../../test/MULTI_SIG/Foundry/utils/MultiSigSwapHookImplementation.sol";
 
 contract MultiSigSwapHookScript is Script {
     function setUp() public {}

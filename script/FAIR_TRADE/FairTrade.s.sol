@@ -2,7 +2,7 @@
 pragma solidity ^0.8.19;
 import {Script, console2} from "forge-std/Script.sol";
 import {FairTrade} from "../../src/FAIR_TRADE/FairTrade.sol";
-import {HookMiner} from "../../test/FAIR_TRADE/utils/HookMiner.sol";
+import {HookMiner} from "../../test/FAIR_TRADE/Foundry/utils/HookMiner.sol";
 import {Hooks} from "@uniswap/v4-core/contracts/libraries/Hooks.sol";
 import {IPoolManager} from "@uniswap/v4-core/contracts/interfaces/IPoolManager.sol";
 

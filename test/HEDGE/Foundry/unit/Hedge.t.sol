@@ -11,7 +11,7 @@ import {PoolKey} from "@uniswap/v4-core/contracts/types/PoolKey.sol";
 import {IPoolManager} from "@uniswap/v4-core/contracts/interfaces/IPoolManager.sol";
 import {PoolId} from "@uniswap/v4-core/contracts/types/PoolId.sol";
 import {Deployers} from "@uniswap/v4-core/test/foundry-tests/utils/Deployers.sol";
-import {Hedge, Trigger} from "../../../src/HEDGE/Hedge.sol";
+import {Hedge, Trigger} from "../../../../src/HEDGE/Hedge.sol";
 import {HedgeImplementation} from "../utils/HedgeImplementation.sol";
 import {TickMath} from "@uniswap/v4-core/contracts/libraries/TickMath.sol";
 import {Currency} from "@uniswap/v4-core/contracts/types/Currency.sol";

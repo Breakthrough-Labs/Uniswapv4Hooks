@@ -30,7 +30,7 @@ const config = {
     }),
   },
   paths: {
-    sources: "./src",
+    sources: "./script",
     tests: "./test",
     cache: "./cache_hardhat",
   },
